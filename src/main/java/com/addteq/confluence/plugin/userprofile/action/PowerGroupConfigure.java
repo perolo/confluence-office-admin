@@ -36,7 +36,7 @@ public class PowerGroupConfigure extends ConfluenceActionSupport {
         String contextPATH=settingsManager.getGlobalSettings().getBaseUrl();
         String redirectURL=contextPATH+"/plugins/servlet/upm/manage/all#manage";
         try {
-            if (licenseManager.getLicense().isDefined()) {
+/*            if (licenseManager.getLicense().isDefined()) {
                 PluginLicense pluginLicense = licenseManager.getLicense().get();
                 if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
@@ -55,9 +55,9 @@ public class PowerGroupConfigure extends ConfluenceActionSupport {
                         isEditOwnProfileChecked = "";
                     } else {
                         isEditOwnProfileChecked = "checked";
-                    }
+                    }*/
                     return SUCCESS;
-                }
+         /*       }
             } else {
                 // handle unlicensed scenario
                 String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
@@ -67,7 +67,7 @@ public class PowerGroupConfigure extends ConfluenceActionSupport {
                         + "</div>";
                 licenseErrorHtml = expirationMessage + "</br>";
                 return ERROR;
-            }
+            }*/
         } catch (Exception e) {
             Logger.getLogger(PowerGroupConfigure.class.getName()).log(Level.SEVERE, null, e);
             String expirationMessage = "<div class=\"aui-message error officeAdminUnlicensedError\">"

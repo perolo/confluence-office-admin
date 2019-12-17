@@ -31,7 +31,7 @@ public class Configure extends ConfluenceActionSupport {
         String contextPATH=settingsManager.getGlobalSettings().getBaseUrl();
         String redirectURL=contextPATH+"/plugins/servlet/upm/manage/all#manage";
         try {
-            if (licenseManager.getLicense().isDefined()) {
+ /*           if (licenseManager.getLicense().isDefined()) {
                 PluginLicense pluginLicense = licenseManager.getLicense().get();
                 if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
@@ -42,9 +42,9 @@ public class Configure extends ConfluenceActionSupport {
                             + "<span class=\"aui-icon icon-warning\"></span>"
                             + "<strong>" + msg + ". Please "+"<a href='"+redirectURL+"'>install</a>"+" a license."+"</strong></p>"
                             + "</div>";
-                    licenseErrorHtml = expirationMessage + "</br>";
-                    return ERROR;
-                } else {
+                    licenseErrorHtml = expirationMessage + "</br>";*/
+                    return SUCCESS;
+/*                } else {
                     return SUCCESS;
                 }
             } else {
@@ -55,8 +55,8 @@ public class Configure extends ConfluenceActionSupport {
                         + "<strong>Office Admin plugin: unlicensed. Please "+"<a href='"+redirectURL+"'>install</a>"+" a license.</strong></p>"
                         + "</div>";
                 licenseErrorHtml = expirationMessage + "</br>";
-                return ERROR;
-            }
+                return SUCCESS;
+            }*/
         } catch (Exception e) {
             Logger.getLogger(Configure.class.getName()).log(Level.SEVERE, null, e);
             String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
@@ -65,7 +65,7 @@ public class Configure extends ConfluenceActionSupport {
                         + "<strong>Office Admin plugin: unlicensed. Please "+"<a href='"+redirectURL+"'>install</a>"+" a license.</strong></p>"
                         + "</div>";
             licenseErrorHtml = expirationMessage + "</br>";
-            return ERROR;
+            return SUCCESS;
         }
     }
 

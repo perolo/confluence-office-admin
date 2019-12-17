@@ -44,7 +44,7 @@ public class ModuleManager extends ConfluenceActionSupport {
 
     private String licenseCheck() {
         try {
-            if (licenseManager.getLicense().isDefined()) {
+/*            if (licenseManager.getLicense().isDefined()) {
                 PluginLicense pluginLicense = licenseManager.getLicense().get();
                 if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
@@ -52,14 +52,14 @@ public class ModuleManager extends ConfluenceActionSupport {
                     licenseErrorHtml = "Please resolvle the Office Admin plugin license status: "
                             + pluginLicense.getError().get().name().toLowerCase() + ".";
                     return ERROR;
-                } else {
+                } else {*/
                     return SUCCESS;
-                }
+/*                }
             } else {
                 // handle unlicensed scenario
                 licenseErrorHtml = "Office Admin plugin is unlicensed.";
                 return ERROR;
-            }
+            }*/
         } catch (Exception e) {
             LOGGER.error("Error while checking license: ", e);
             licenseErrorHtml = "The plugin system was not able to check license. Please check Confluence log for detail.";

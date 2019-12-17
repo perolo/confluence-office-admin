@@ -212,7 +212,7 @@ public class UserProfileManager {
         String contextPATH=settingsManager.getGlobalSettings().getBaseUrl();
         String redirectURL=contextPATH+"/plugins/servlet/upm/manage/all#manage";
         try {
-            if (licenseManager.getLicense().isDefined()) {
+/*            if (licenseManager.getLicense().isDefined()) {
                 PluginLicense pluginLicense = licenseManager.getLicense().get();
                 if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
@@ -224,9 +224,9 @@ public class UserProfileManager {
                             + "<strong>" + msg + ". Please "+"<a href='"+redirectURL+"'>install</a>"+" a license."+"</strong></p>"
                             + "</div>";
                     licenseErrorHtml = expirationMessage + "</br>";
-                } else {
+                } else {*/
                     licenseErrorHtml = SUCCESS;
-                }
+/*                }
             } else {
                 // handle unlicensed scenario
                   String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
@@ -235,7 +235,7 @@ public class UserProfileManager {
                     + "<strong>Office Admin plugin: unlicensed. Please "+"<a href='"+redirectURL+"'>install</a>"+" a license.</strong></p>"
                     + "</div>";
                 licenseErrorHtml = expirationMessage + "</br>";
-            }
+            }*/
         } catch (Exception e) {
             Logger.getLogger(UserProfileFieldsManager.class.getName()).log(Level.SEVERE, null, e);
               String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"

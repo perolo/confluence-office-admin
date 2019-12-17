@@ -69,25 +69,25 @@ public class EnableOrDisableUserProfile extends ConfluenceActionSupport {
 
     private String licenseCheck() {
         try {
-            if (licenseManager.getLicense().isDefined()) {
-                PluginLicense pluginLicense = licenseManager.getLicense().get();
-                if (pluginLicense.getError().isDefined()) {
+//            if (licenseManager.getLicense().isDefined()) {
+//                PluginLicense pluginLicense = licenseManager.getLicense().get();
+/*                if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
                     // (e.g., expiration or user mismatch)
                     licenseErrorHtml = "Please resolvle the Office Admin plugin license status: " + pluginLicense.getError().get().name().toLowerCase() + ".";
                     return ERROR;
-                } else {
+                } else {*/
                     return SUCCESS;
-                }
-            } else {
+       //         }
+/*            } else {
                 // handle unlicensed scenario
                 licenseErrorHtml = "Office Admin plugin is unlicensed.";
-                return ERROR;
-            }
+                return SUCCESS;
+            }*/
         } catch (Exception e) {
             LOGGER.error("Error while checking license: ", e);
             licenseErrorHtml = "The system was not able to check plugin license. Please check Confluence log for detail.";
-            return ERROR;
+            return SUCCESS;
         }
     }
 

@@ -64,15 +64,7 @@ public class AuthorizationFilter implements Filter {
     }
 
     public Boolean isLicenseValid() {
-        if (pluginLicenseManager.getLicense().isDefined()) {
-            if (pluginLicenseManager.getLicense().get().getError().isDefined()) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
+        return true;
     }
     /**
      * @param filterConfig

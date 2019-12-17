@@ -114,7 +114,7 @@ public class FlowDiagramMacro extends BaseMacro implements Macro {
         String contextPATH=settingsManager.getGlobalSettings().getBaseUrl();
         String redirectURL=contextPATH+"/plugins/servlet/upm/manage/all#manage";
         try {
-            if (licenseManager.getLicense().isDefined()) {
+            /*if (licenseManager.getLicense().isDefined()) {
                 PluginLicense pluginLicense = licenseManager.getLicense().get();
                 if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
@@ -126,7 +126,7 @@ public class FlowDiagramMacro extends BaseMacro implements Macro {
                             + "<strong>" + msg + ". Please "+"<a href='"+redirectURL+"'>install</a>"+" a license."+"</strong></p>"
                             + "</div>";
                     return expirationMessage + "</br>" + macroUserInput;
-                } else {
+                } else {*/
                     Map<String, Object> contextMap = MacroUtils.defaultVelocityContext();
                     Document userInput = Jsoup.parse(macroUserInput);
                     Elements imgEle = userInput.getElementsByTag("img");
@@ -268,7 +268,7 @@ public class FlowDiagramMacro extends BaseMacro implements Macro {
                     }
 
                     return VelocityUtils.getRenderedTemplate("template/floorPlanMacro.vm", contextMap);
-                }
+                /*}
             } else {
                 // handle unlicensed scenario
             String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
@@ -277,7 +277,7 @@ public class FlowDiagramMacro extends BaseMacro implements Macro {
                     + "<strong>Office Admin plugin: unlicensed. Please "+"<a href='"+redirectURL+"'>install</a>"+" a license.</strong></p>"
                     + "</div>";
                 return expirationMessage + "</br>" + macroUserInput;
-            }
+            }*/
         } catch (Exception e) {
             Logger.getLogger(FlowDiagramMacro.class.getName()).log(Level.SEVERE, null, e);
             String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"

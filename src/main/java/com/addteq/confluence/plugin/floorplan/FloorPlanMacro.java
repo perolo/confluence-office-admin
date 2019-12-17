@@ -127,9 +127,9 @@ public class FloorPlanMacro extends BaseMacro implements Macro {
         String contextPATH=settingsManager.getGlobalSettings().getBaseUrl();
         String redirectURL=contextPATH+"/plugins/servlet/upm/manage/all#manage";
         try {
-            if (licenseManager.getLicense().isDefined()) {
-                PluginLicense pluginLicense = licenseManager.getLicense().get();
-                if (pluginLicense.getError().isDefined()) {
+          //  if (licenseManager.getLicense().isDefined()) {
+          //      PluginLicense pluginLicense = licenseManager.getLicense().get();
+ /*               if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
                     // (e.g., expiration or user mismatch)
                     String msg = "Office Admin plugin: license " + pluginLicense.getError().get().name().toLowerCase();
@@ -139,7 +139,7 @@ public class FloorPlanMacro extends BaseMacro implements Macro {
                             + "<strong>" + msg + ". Please "+"<a href='"+redirectURL+"'>install</a>"+" a license."+"</strong></p>"
                             + "</div>";
                     return expirationMessage + "</br>" + macroUserInput;
-                } else {
+                } else {*/
                     Map<String, Object> contextMap = MacroUtils.defaultVelocityContext();
                     Document userInput = Jsoup.parse(macroUserInput);
                     Elements imgEle = userInput.getElementsByTag("img");
@@ -284,8 +284,8 @@ public class FloorPlanMacro extends BaseMacro implements Macro {
                     }
 
                     return VelocityUtils.getRenderedTemplate("template/floorPlanMacro.vm", contextMap);
-                }
-            } else {
+                //}
+         /*   } else {
                 // handle unlicensed scenario
                 String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
                         + "<p class=\"title\">"
@@ -293,7 +293,7 @@ public class FloorPlanMacro extends BaseMacro implements Macro {
                         + "<strong>Office Admin plugin: unlicensed. Please "+"<a href='"+redirectURL+"'>install</a>"+" a license.</strong></p>"
                         + "</div>";
                 return expirationMessage + "</br>" + macroUserInput;
-            }
+            }*/
         } catch (Exception e) {
             Logger.getLogger(FloorPlanMacro.class.getName()).log(Level.SEVERE, null, e);
             String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"

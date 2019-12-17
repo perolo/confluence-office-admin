@@ -79,7 +79,7 @@ public class NewPeopleDirAction extends ConfluenceActionSupport {
         
         topThreeFields = topThreeFields();
         try {
-            if (licenseManager.getLicense().isDefined()) {
+/*            if (licenseManager.getLicense().isDefined()) {
                 PluginLicense pluginLicense = licenseManager.getLicense().get();
                 if (pluginLicense.getError().isDefined()) {
                     // handle license error scenario
@@ -91,7 +91,7 @@ public class NewPeopleDirAction extends ConfluenceActionSupport {
                             + "<strong>" + msg + ". Please "+"<a href='"+redirectURL+"'>install</a>"+" a license."+"</strong></p>"
                             + "</div>";
                     licenseErrorHtml = expirationMessage + "</br>";
-                } else {
+                } else {*/
                     String div = "<div class='newpeoplesAsMacros'>";
                     List searchUserInTheSystem = new ArrayList();
                     List fieldValuesArr = new ArrayList(3);
@@ -187,7 +187,7 @@ public class NewPeopleDirAction extends ConfluenceActionSupport {
                 }catch(Exception e) {
                     LOGGER.error(e);
                 }
-                }
+/*                }
             } else {
                 // handle unlicensed scenario
                 String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
@@ -196,7 +196,7 @@ public class NewPeopleDirAction extends ConfluenceActionSupport {
                         + "<strong>Office Admin plugin: unlicensed. Please " + "<a href='" + redirectURL + "'>install</a>" + " a license.</strong></p>"
                         + "</div>";
                 licenseErrorHtml = expirationMessage + "</br>";
-            }
+            }*/
         } catch (Exception e) {
             LOGGER.error(e);
         }
