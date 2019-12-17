@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.addteq</groupId>
     <artifactId>officeadmin</artifactId>
-    <version>1.6</version>
+    <version>1.7</version>
     <organization>
         <name>Addteq</name>
         <url>http://www.addteq.com/</url>
@@ -70,12 +70,6 @@
         <dependency>
             <groupId>com.atlassian.upm</groupId>
             <artifactId>plugin-license-storage-plugin</artifactId>
-            <version>${upm.license.compatibility.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.atlassian.upm</groupId>
-            <artifactId>licensing-api</artifactId>
             <version>${upm.license.compatibility.version}</version>
             <scope>provided</scope>
         </dependency>

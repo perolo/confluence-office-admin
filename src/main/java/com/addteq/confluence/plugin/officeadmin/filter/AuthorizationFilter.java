@@ -2,7 +2,7 @@ package com.addteq.confluence.plugin.officeadmin.filter;
 
 import com.atlassian.sal.api.user.UserKey;
 import com.atlassian.sal.api.user.UserManager;
-import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -22,11 +22,11 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthorizationFilter implements Filter {
 
     private final UserManager userManager;
-    private final PluginLicenseManager pluginLicenseManager;
+//    private final PluginLicenseManager pluginLicenseManager;
 
-    public AuthorizationFilter(UserManager userManager, PluginLicenseManager pluginLicenseManager) {
+    public AuthorizationFilter(UserManager userManager/*, PluginLicenseManager pluginLicenseManager*/) {
 
-        this.pluginLicenseManager = pluginLicenseManager;
+      //  this.pluginLicenseManager = pluginLicenseManager;
         this.userManager = userManager;
     }
 

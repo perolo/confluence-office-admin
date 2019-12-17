@@ -13,8 +13,8 @@ import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.confluence.user.UserDetailsManager;
 import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.atlassian.sal.api.user.UserManager;
-import com.atlassian.upm.api.license.PluginLicenseManager;
-import com.atlassian.upm.api.license.entity.PluginLicense;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.entity.PluginLicense;
 import com.atlassian.user.User;
 import com.opensymphony.webwork.ServletActionContext;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class NewPeopleDirAction extends ConfluenceActionSupport {
     private ActiveObjects ao;
     private int searchPeopleDataCount;
     private int pageId = 1;
-    private final PluginLicenseManager licenseManager;
+   // private final PluginLicenseManager licenseManager;
     private String licenseErrorHtml = "";
     private final SettingsManager settingsManager;
     private List<FormBuilderRestBean> topThreeFields;
@@ -52,7 +52,7 @@ public class NewPeopleDirAction extends ConfluenceActionSupport {
     private final org.apache.log4j.Logger LOGGER = org.apache.log4j.Logger.getLogger(NewPeopleDirAction.class.getName());
     private static final int NO_OF_FIELDS_TO_DISPLAY_IN_PEOPLE_DIRECTORY = 3;
     public NewPeopleDirAction(UserDetailsManager udm, UserAccessor userAccessor, BootstrapManager bootstrapManager, 
-            ActiveObjects ao, PluginLicenseManager licenseManager, SettingsManager settingsManager,
+            ActiveObjects ao, /*PluginLicenseManager licenseManager, */SettingsManager settingsManager,
             UserManager userManager, LoginUriProvider loginUriProvider) {
         userDetailsManager = udm;
         this.userAccessor = userAccessor;
@@ -60,7 +60,7 @@ public class NewPeopleDirAction extends ConfluenceActionSupport {
         this.contextPath = bootstrapManager.getWebAppContextPath();
         this.ao = ao;
         this.searchPeopleDataCount = 0;
-        this.licenseManager = licenseManager;
+      //  this.licenseManager = licenseManager;
         this.settingsManager=settingsManager;
         this.userManager = userManager;
         this.loginUriProvider = loginUriProvider;

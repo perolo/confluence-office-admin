@@ -35,8 +35,8 @@ import com.atlassian.renderer.v2.macro.MacroException;
 import com.atlassian.sal.api.message.I18nResolver;
 import com.atlassian.sal.api.transaction.TransactionCallback;
 import com.atlassian.spring.container.ContainerManager;
-import com.atlassian.upm.api.license.PluginLicenseManager;
-import com.atlassian.upm.api.license.entity.PluginLicense;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.entity.PluginLicense;
 import com.atlassian.user.EntityException;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
@@ -82,7 +82,7 @@ public class FloorPlanMacro extends BaseMacro implements Macro {
     private final PageManager pageManager;
     private String checksum = "";
     private PermissionManager permissionManager;
-    private final PluginLicenseManager licenseManager;
+    //private final PluginLicenseManager licenseManager;
     private final ActiveObjects ao;
     private final SettingsManager settingsManager;
     private final UserAccessor userAccessor;
@@ -90,13 +90,13 @@ public class FloorPlanMacro extends BaseMacro implements Macro {
 
     
     public FloorPlanMacro(WritableDownloadResourceManager downloadResourceManager, AttachmentManager attachmentManager, PageManager pageManager,
-            PermissionManager permissionManager, ActiveObjects ao, PluginLicenseManager licenseManager, SettingsManager settingsManager, UserAccessor userAccessor,I18nResolver i18nResolver) {
+            PermissionManager permissionManager, ActiveObjects ao, /*PluginLicenseManager licenseManager,*/ SettingsManager settingsManager, UserAccessor userAccessor,I18nResolver i18nResolver) {
         this.downloadResourceManager = downloadResourceManager;
         this.attachmentManager = attachmentManager;
         this.pageManager = pageManager;
         this.permissionManager = permissionManager;
         this.ao = ao;
-        this.licenseManager = licenseManager;
+        //this.licenseManager = licenseManager;
         this.settingsManager=settingsManager;
         this.userAccessor = userAccessor;
         this.i18nResolver = i18nResolver;

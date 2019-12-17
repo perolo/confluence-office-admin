@@ -2,8 +2,8 @@ package com.addteq.confluence.plugin.userprofile.action;
 
 import com.atlassian.confluence.core.ConfluenceActionSupport;
 import com.atlassian.confluence.setup.settings.SettingsManager;
-import com.atlassian.upm.api.license.PluginLicenseManager;
-import com.atlassian.upm.api.license.entity.PluginLicense;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.entity.PluginLicense;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,12 +11,12 @@ public class UpdatePluginDataConf extends ConfluenceActionSupport {
 
     private static final long serialVersionUID = -1154390784766196630L;
 
-    private final PluginLicenseManager licenseManager;
-    private String licenseErrorHtml;
+ //   private final PluginLicenseManager licenseManager;
+  //  private String licenseErrorHtml;
      private final SettingsManager settingsManager;
 
-    public UpdatePluginDataConf(PluginLicenseManager licenseManager, SettingsManager settingsManager) {
-        this.licenseManager = licenseManager;
+    public UpdatePluginDataConf(/*PluginLicenseManager licenseManager, */SettingsManager settingsManager) {
+    //    this.licenseManager = licenseManager;
         this.settingsManager=settingsManager;
     }
 
@@ -58,15 +58,15 @@ public class UpdatePluginDataConf extends ConfluenceActionSupport {
                         + "<span class=\"aui-icon icon-warning\"></span>"
                         + "<strong>Office Admin plugin: unlicensed. Please "+"<a href='"+redirectURL+"'>install</a>"+" a license.</strong></p>"
                         + "</div>";
-            licenseErrorHtml = expirationMessage + "</br>";
+            //licenseErrorHtml = expirationMessage + "</br>";
             return ERROR;
         }
     }
 
-    public String getLicenseErrorHtml() {
+/*    public String getLicenseErrorHtml() {
         return licenseErrorHtml;
     }
-
+*/
     @Override
     public String doDefault() throws Exception {
         return SUCCESS;

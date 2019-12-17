@@ -29,8 +29,8 @@ import com.atlassian.renderer.v2.macro.BaseMacro;
 import com.atlassian.renderer.v2.macro.MacroException;
 import com.atlassian.sal.api.transaction.TransactionCallback;
 import com.atlassian.spring.container.ContainerManager;
-import com.atlassian.upm.api.license.PluginLicenseManager;
-import com.atlassian.upm.api.license.entity.PluginLicense;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.entity.PluginLicense;
 import com.atlassian.user.GroupManager;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
@@ -70,7 +70,7 @@ public class FlowDiagramMacro extends BaseMacro implements Macro {
     private StringBuilder img;
     private String macroId = "";
     private int viewportwidth = 0;
-    private final PluginLicenseManager licenseManager;
+ //   private final PluginLicenseManager licenseManager;
     private final AttachmentManager attachmentManager;
     private final PageManager pageManager;
     private String checksum = "";
@@ -79,12 +79,12 @@ public class FlowDiagramMacro extends BaseMacro implements Macro {
     private final GroupManager groupManager;
 
     public FlowDiagramMacro(AttachmentManager attachmentManager, PageManager pageManager,
-            ActiveObjects ao, PluginLicenseManager licenseManager, SettingsManager settingsManager,
+            ActiveObjects ao, /*PluginLicenseManager licenseManager, */SettingsManager settingsManager,
             GroupManager groupManager) {
         this.attachmentManager = attachmentManager;
         this.pageManager = pageManager;
         this.ao = ao;
-        this.licenseManager = licenseManager;
+      //  this.licenseManager = licenseManager;
         this.settingsManager = settingsManager;
         this.groupManager = groupManager;
     }

@@ -8,8 +8,8 @@ import com.atlassian.plugin.Plugin;
 import com.atlassian.plugin.PluginAccessor;
 import com.atlassian.plugins.rest.common.security.AnonymousAllowed;
 import com.atlassian.sal.api.transaction.TransactionCallback;
-import com.atlassian.upm.api.license.PluginLicenseManager;
-import com.atlassian.upm.api.license.entity.PluginLicense;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.entity.PluginLicense;
 import static com.opensymphony.xwork.Action.SUCCESS;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -38,13 +38,13 @@ import net.java.ao.Query;
 public class UserProfileManager {
 
     private final ActiveObjects ao;
-    private final PluginLicenseManager licenseManager;
-    public static String licenseErrorHtml = "";
+  //  private final PluginLicenseManager licenseManager;
+  //  public static String licenseErrorHtml = "";
     private final SettingsManager settingsManager;
     private final PluginAccessor pluginAccessor;
-    public UserProfileManager(ActiveObjects ao, PluginLicenseManager licenseManager, SettingsManager settingsManager,PluginAccessor pluginAccessor) {
+    public UserProfileManager(ActiveObjects ao, /*PluginLicenseManager licenseManager,*/ SettingsManager settingsManager,PluginAccessor pluginAccessor) {
         this.ao = ao;
-        this.licenseManager = licenseManager;
+   //     this.licenseManager = licenseManager;
         this.settingsManager=settingsManager;
         this.pluginAccessor = pluginAccessor;
     }   
@@ -199,7 +199,7 @@ public class UserProfileManager {
             }
         });
     }
-
+/*
     @GET
     @AnonymousAllowed
     @Path("/checkLicenseIsValid")
@@ -212,6 +212,8 @@ public class UserProfileManager {
         String contextPATH=settingsManager.getGlobalSettings().getBaseUrl();
         String redirectURL=contextPATH+"/plugins/servlet/upm/manage/all#manage";
         try {
+
+ */
 /*            if (licenseManager.getLicense().isDefined()) {
                 PluginLicense pluginLicense = licenseManager.getLicense().get();
                 if (pluginLicense.getError().isDefined()) {
@@ -225,7 +227,7 @@ public class UserProfileManager {
                             + "</div>";
                     licenseErrorHtml = expirationMessage + "</br>";
                 } else {*/
-                    licenseErrorHtml = SUCCESS;
+              //      licenseErrorHtml = SUCCESS;
 /*                }
             } else {
                 // handle unlicensed scenario
@@ -236,6 +238,7 @@ public class UserProfileManager {
                     + "</div>";
                 licenseErrorHtml = expirationMessage + "</br>";
             }*/
+/*
         } catch (Exception e) {
             Logger.getLogger(UserProfileFieldsManager.class.getName()).log(Level.SEVERE, null, e);
               String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
@@ -247,7 +250,7 @@ public class UserProfileManager {
         }
         return licenseErrorHtml;
     }
-    
+  */
     @GET
     @AnonymousAllowed
     @Produces(MediaType.TEXT_PLAIN)

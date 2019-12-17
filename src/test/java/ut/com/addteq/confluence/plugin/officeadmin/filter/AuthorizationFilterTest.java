@@ -3,8 +3,8 @@ package ut.com.addteq.confluence.plugin.officeadmin.filter;
 import com.addteq.confluence.plugin.officeadmin.filter.AuthorizationFilter;
 import com.atlassian.sal.api.user.UserKey;
 import com.atlassian.sal.api.user.UserManager;
-import com.atlassian.upm.api.license.PluginLicenseManager;
-import com.atlassian.upm.api.license.entity.PluginLicense;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.entity.PluginLicense;
 import com.atlassian.upm.api.util.Option;
 import java.io.IOException;
 import javax.servlet.FilterChain;
@@ -29,19 +29,19 @@ public class AuthorizationFilterTest {
     @Mock
     UserManager userManager;
     @Mock
-    Option<PluginLicense> pluginLicense;
-    @Mock
+  //  Option<PluginLicense> pluginLicense;
+ //   @Mock
     FilterChain filterChain;
 
     AuthorizationFilter authorizationFilter;
-    PluginLicenseManager pluginLicenseManager;
+  //  PluginLicenseManager pluginLicenseManager;
     UserKey userKeyNotAdmin = new UserKey("notAdmin");
     UserKey userKeyAdmin = new UserKey("admin");
 
     @Before
     public void setup() {
 
-        authorizationFilter = new AuthorizationFilter(userManager, pluginLicenseManager);
+        authorizationFilter = new AuthorizationFilter(userManager/*, pluginLicenseManager*/);
     }
 
     @After

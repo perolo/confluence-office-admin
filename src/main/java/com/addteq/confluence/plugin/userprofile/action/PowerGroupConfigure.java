@@ -4,9 +4,9 @@ import com.atlassian.bandana.BandanaManager;
 import com.atlassian.confluence.core.ConfluenceActionSupport;
 import com.atlassian.confluence.setup.bandana.ConfluenceBandanaContext;
 import com.atlassian.confluence.setup.settings.SettingsManager;
-import com.atlassian.upm.api.license.PluginLicenseManager;
-import com.atlassian.upm.api.license.entity.PluginLicense;
-import static com.opensymphony.xwork.Action.SUCCESS;
+//import com.atlassian.upm.api.license.PluginLicenseManager;
+//import com.atlassian.upm.api.license.entity.PluginLicense;
+//import static com.opensymphony.xwork.Action.SUCCESS;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,17 +17,17 @@ import java.util.logging.Logger;
 public class PowerGroupConfigure extends ConfluenceActionSupport {
 
     private static final long serialVersionUID = -5480634702843231193L;
-    private final PluginLicenseManager licenseManager;
+  //  private final PluginLicenseManager licenseManager;
     private String licenseErrorHtml;
     private final SettingsManager settingsManager;
     private final BandanaManager bandanaManager;
     private String isEditOwnProfileChecked;
 
-    public PowerGroupConfigure(PluginLicenseManager licenseManager, SettingsManager settingsManager,
+    public PowerGroupConfigure(/*PluginLicenseManager licenseManager, */SettingsManager settingsManager,
             BandanaManager bandanaManager) {
 
         this.bandanaManager = bandanaManager;
-        this.licenseManager = licenseManager;
+//        this.licenseManager = licenseManager;
         this.settingsManager = settingsManager;
     }
 
