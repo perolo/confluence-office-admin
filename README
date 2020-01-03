@@ -6,6 +6,11 @@ This plugin has many features, few most important have been mentioned below.
 
 3. Avatar: The plugin also have avatar feature which can be used across all the other atlassian tools for uniformity of profile pictures.
 
+==========================================================================
+Modifications to Addteq plugin:
+* Updated to later Atlassian SDK
+* Removed/Commented out the use/need of License
+** Tested OK on a Confluence Server 6.15.5
 
 ==========================================================================
 Here are the SDK commands you'll use immediately:
