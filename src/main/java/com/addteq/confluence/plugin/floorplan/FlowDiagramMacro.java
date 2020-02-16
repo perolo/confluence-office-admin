@@ -280,12 +280,16 @@ public class FlowDiagramMacro extends BaseMacro implements Macro {
             }*/
         } catch (Exception e) {
             Logger.getLogger(FlowDiagramMacro.class.getName()).log(Level.SEVERE, null, e);
+            /* silen swallow?
             String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
                     + "<p class=\"title\">"
                     + "<span class=\"aui-icon icon-warning\"></span>"
                     + "<strong>Office Admin plugin: unlicensed. Please "+"<a href='"+redirectURL+"'>install</a>"+" a license.</strong></p>"
                     + "</div>";
             return expirationMessage + "</br>" + macroUserInput;
+
+             */
+            return  "</br>" + macroUserInput;
         }
     }
 

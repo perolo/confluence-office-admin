@@ -16,6 +16,10 @@ jQuery(document).ready(function(){
     var url = window.location.href;
     var pageurl = window.location.pathname;
     if (url.indexOf('viewuser.action') > -1 || url.indexOf('edituser.action') > -1 || url.indexOf('editmyprofile.action') > -1 || url.indexOf('viewmyprofile.action') > -1 || url.indexOf('viewuserprofile.action') > -1 || url.indexOf('display') > -1) {
+        AJS.I18n.get("com.addteq.officeadmin"); //Load the properties file.
+        enableOfficeAdminPlugin(pageurl);
+        checkIfAnotherUserProfilePluginIsInstalled();
+/*
         jQuery.ajax({
             url: AJS.contextPath() + "/rest/userProfile/1.0/userProfileManager/checkLicenseIsValid",
             type: "GET",
@@ -31,7 +35,7 @@ jQuery(document).ready(function(){
                     }
                 });
             }
-        });
+        });*/
     }
     
     jQuery(document).on('keyup', 'div .select2-search-field input', function(){        
@@ -846,7 +850,7 @@ function saveNativeFields(userName) {
         }
     });
 }
-
+/*
 function licenseValidation() {
     jQuery.ajax({
         url: AJS.contextPath() + "/rest/userProfile/1.0/userProfileManager/checkLicenseIsValid",
@@ -858,7 +862,7 @@ function licenseValidation() {
         }
     });
 }
-
+*/
 function scrapeHtmlAndJs(){
    /* This code affects in below cases, 
     1.edit profile button on right top for all users

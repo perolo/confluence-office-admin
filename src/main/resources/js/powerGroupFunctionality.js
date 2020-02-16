@@ -74,26 +74,27 @@ function checkIsInPowerGroup() {
         dataType: "text",
         success: function (data) {
             var isPowerUser = data;
+            /*
             jQuery.ajax({
                 url: AJS.contextPath() + "/rest/userProfile/1.0/userProfileManager/checkLicenseIsValid",
                 type: "GET",
-                success: function(data) {
-                    if (data.trim() === "success" && (isPowerUser === "true" || AJS.params.isConfluenceAdmin == true)) {
+                success: function(data) {*/
+                    if ( (isPowerUser === "true" || AJS.params.isConfluenceAdmin == true)) {
                         if ((window.location.pathname).indexOf(AJS.contextPath() + '/users/profile/editmyprofilepicture.action') === -1 && (window.location.pathname).indexOf(AJS.contextPath() + '/users/editmyprofile.action') === -1) {
                             if(jQuery('#userProfileBtnContainer').length === 0)
                                 showEditProfileBtn();
                             if(jQuery('#uploadCustomProfilePicture').length === 0)
                                 showChangeProfilePicOption();
                         }
-                    } else if (data.trim() === "success" && isPowerUser !== "true" && (window.location.pathname).indexOf(AJS.contextPath() + '/users/profile/editmyprofilepicture.action') > -1) {
+                    } else if ( isPowerUser !== "true" && (window.location.pathname).indexOf(AJS.contextPath() + '/users/profile/editmyprofilepicture.action') > -1) {
                         jQuery('.profile-page').html('<br><h1>You don\'t have permission for edit...Please contact Administrator</h1>');
-                    } else if (data.trim() === "success" && isPowerUser !== "true" && (window.location.pathname).indexOf(AJS.contextPath() + '/users/editmyprofile.action') > -1) {
+                    } else if ( isPowerUser !== "true" && (window.location.pathname).indexOf(AJS.contextPath() + '/users/editmyprofile.action') > -1) {
                         jQuery('.profile-page').html('<br><h1>You don\'t have permission for edit...Please contact Administrator</h1>');
-                    } else if (data.trim() === "success" && isPowerUser !== "true" && editOwnProfile == false) {
+                    } else if (isPowerUser !== "true" && editOwnProfile == false) {
                         jQuery('.content-navigation .edit-link').remove();
                     }
-                }
-            });
+                //}
+           // });
         }
     });
 }

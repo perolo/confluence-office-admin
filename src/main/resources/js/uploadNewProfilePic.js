@@ -12,7 +12,9 @@ var uploadProfilePicFormHtml = '<br>Your profile picture is used as the icon for
                                 </div></form>';
 var url = window.location.href;
 if (url.indexOf('editmyprofilepicture.action') > -1) {
-    jQuery.ajax({
+    enableUploadPicOption();
+
+/*    jQuery.ajax({
         url: AJS.contextPath() + "/rest/userProfile/1.0/userProfileManager/checkLicenseIsValid",
         type: "GET",
         success: function (data) {
@@ -21,9 +23,9 @@ if (url.indexOf('editmyprofilepicture.action') > -1) {
                 jQuery('.profile-info,.profile-main,#user-profile,form[name="editUser"]').attr('style', 'display: table-cell !important;');
             } else {
                 enableUploadPicOption();
-            }
+           }
         }
-    });
+    });*/
 }
 function enableUploadPicOption() {
     AJS.toInit(function () {

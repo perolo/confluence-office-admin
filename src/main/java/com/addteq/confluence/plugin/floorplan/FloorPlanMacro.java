@@ -296,12 +296,17 @@ public class FloorPlanMacro extends BaseMacro implements Macro {
             }*/
         } catch (Exception e) {
             Logger.getLogger(FloorPlanMacro.class.getName()).log(Level.SEVERE, null, e);
+            /* silent swallow?
             String expirationMessage = "<div class=\"aui-message warning officeAdminUnlicensedError\">"
                             + "<p class=\"title\">"
                             + "<span class=\"aui-icon icon-warning\"></span>"
                             + "<strong>" + i18nResolver.getText("plugin.unable.render.message") +"</strong></p>"
                             + "</div>";
             return expirationMessage + "</br>" + macroUserInput;
+                            */
+            return "</br>" + macroUserInput;
+
+
         }
     }
     
